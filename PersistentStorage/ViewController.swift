@@ -10,16 +10,29 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // stores data
+        NSUserDefaults.standardUserDefaults().setObject("Mark", forKey: "name")
+        // retrieves data
+        var name = NSUserDefaults.standardUserDefaults().objectForKey("name")! as String
+        println(name)
+        
+        // init array
+        var array = [1,2,3]
+        // store array
+        NSUserDefaults.standardUserDefaults().setObject(array, forKey: "array")
+        // retrieve array
+        var savedArray = NSUserDefaults.standardUserDefaults().objectForKey("array")! as NSArray
+        println(savedArray[2])
+
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
